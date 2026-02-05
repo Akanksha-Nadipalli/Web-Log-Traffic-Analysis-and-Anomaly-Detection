@@ -116,7 +116,7 @@ Web-Log-Traffic-Analysis-and-Anomaly-Detection/
 │
 ├── data/
 │   ├── processed_features.csv
-│   └── anomaly_scores.cs
+│   └── anomaly_scores.csv
 │
 ├── models/
 │   ├── isolation_forest.pkl
