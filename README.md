@@ -1,4 +1,7 @@
-## 🛰️ Web Log Traffic Analysis and Anomaly Detection
+**Access the interactive dashboard here:** [Web Traffic Anomaly Detection App](https://web-traffic-anomaly-dashboard.streamlit.app/)
+
+---
+##  Web Log Traffic Analysis and Anomaly Detection
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-orange?style=for-the-badge&logo=pandas)
@@ -9,7 +12,7 @@
 
 *Detecting suspicious IP behavior from raw server logs using behavioral feature engineering and Isolation Forest.*
 
-## 📌 Overview
+##  Overview
 
 Web servers receive thousands of requests from different IP addresses.
 Among them are:
@@ -24,11 +27,18 @@ Among them are:
 
 Instead of checking requests one by one, this project models how each IP behaves over time and uses machine learning to detect abnormal behavior.
 
+##  Dashboard Demo
+<div align="center">
+  <img src="assets/dashboard.gif" width="900" alt="Anomaly Detection Walkthrough">
+  <p><i>Real-time analysis showing log uploads, anomaly scoring, and threat identification.</i></p>
+</div>
 
-## 🔄 Workflow 
+---
+
+##  Workflow 
 Raw Logs → Cleaning → Feature Engineering (per IP) → Isolation Forest → Visual Analysis
 
-## 🧹 Log Parsing & Cleaning
+##  Log Parsing & Cleaning
 
 Raw logs were converted into structured data with fields such as:
 
@@ -45,7 +55,7 @@ Raw logs were converted into structured data with fields such as:
 ✦ is_bot
 
 
-## 🧠 Feature Engineering
+##  Feature Engineering
 
 We transform the dataset from:
 
@@ -64,29 +74,12 @@ For every IP, we compute:
 | URL structure features | API/static/query behavior |
 
 
-## 🤖 Anomaly Detection — Isolation Forest
+##  Anomaly Detection — Isolation Forest
 Isolation Forest detects rare and unusual patterns without labels.
 
 ✦ Negative score → Anomalous IP
 
 ✦ Positive score → Normal IP
-
-
-## 📊 Visual Analytics Dashboard
-
-### Anomaly Score Distribution
-![Anomaly Score](plots/anomaly_score_distribution.jpeg)
-
-### Bot-like vs Human-like Traffic
-![Bot vs Human](plots/bot_vs_human_requests.png)
-
-### Requests Activity by hour 
-![Requests vs URLs](plots/activity_by_hour.jpeg)
-
-### Error Rate: Normal vs Anomalous IPs
-![Error Rate](plots/error_rate_comparison.png)
-
-These visualizations clearly show how anomalous IPs behave differently from normal users.
 
 ## 🛠️ Technologies Used
 
@@ -100,40 +93,44 @@ These visualizations clearly show how anomalous IPs behave differently from norm
 
 ✦ Google Colab
 
+✦ Streamlit
 
 ## 📁 Project Structure
 
 ```
 Web-Log-Traffic-Analysis-and-Anomaly-Detection/
 │
-├── abstract.pdf
+├── assets/                  
+│   └── dashboard.gif         # Demo video of the application
 │
-├── notebooks/
+├── data/                     
+│   ├── cleaned_logs.csv     
+│   ├── processed_features.csv
+│   └── anomaly_scores.csv
+│
+├── models/                   # Trained ML models
+│   ├── isolation_forest.pkl
+│   └── scaler.pkl
+│
+├── plots/                    
+│   ├── anomaly_score_distribution.jpeg
+│   ├── bot_vs_human_requests.png
+│   ├── activity_by_hour.jpeg 
+│   └── error_rate_comparision.png
+│
+├── programfiles/             
 │   ├── log_parsing_cleaning.ipynb
 │   ├── feature_engineering.ipynb
 │   ├── anomaly_model_training.ipynb
 │   └── analysis_visualization.ipynb
 │
-├── data/
-│   ├── processed_features.csv
-│   └── anomaly_scores.csv
-│
-├── models/
-│   ├── isolation_forest.pkl
-│   └── scaler.pkl
-│
-├── plots/
-│   ├── anomaly_score_distribution.png
-│   ├── bot_vs_human_requests.png
-│   ├── requests_vs_urls_scatter.png
-│   └── error_rate_clean.png
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── app.py                    # Streamlit Dashboard application
+├── README.md                 
+├── requirements.txt          
+└── abstract.pdf
 ```
 
-## 🎯 What This Project Demonstrates
+##  What This Project Demonstrates
 
 Log analysis
 
@@ -145,5 +142,4 @@ Behavioral analytics
 
 Data visualization for interpretation
 
-
-
+Interactive security intelligence dashboards
