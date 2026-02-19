@@ -1,18 +1,23 @@
-**Access the interactive dashboard here:** [Web Traffic Anomaly Detection App](https://web-traffic-anomaly-dashboard.streamlit.app/)
+## 🌐 Web Log Traffic Analysis and Anomaly Detection
 
----
-##  Web Log Traffic Analysis and Anomaly Detection
+Access the deployed Streamlit application:  
+🔗 https://web-traffic-anomaly-dashboard.streamlit.app/
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?style=for-the-badge&logo=streamlit)
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-orange?style=for-the-badge&logo=pandas)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Anomaly%20Detection-green?style=for-the-badge&logo=scikitlearn)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical%20Computing-blue?style=for-the-badge&logo=numpy)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-green?style=for-the-badge&logo=scikitlearn)
+![Plotly](https://img.shields.io/badge/Plotly-Visualization-darkblue?style=for-the-badge&logo=plotly)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red?style=for-the-badge)
 ![Isolation Forest](https://img.shields.io/badge/Model-Isolation%20Forest-purple?style=for-the-badge)
-![Project Type](https://img.shields.io/badge/Project-Web%20Log%20Analytics-brightgreen?style=for-the-badge)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Anomaly%20Detection-brightgreen?style=for-the-badge)
+![Deployment](https://img.shields.io/badge/Deployment-Streamlit%20Cloud-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Deployed-success?style=for-the-badge)
 
-*Detecting suspicious IP behavior from raw server logs using behavioral feature engineering and Isolation Forest.*
+---
 
-##  Overview
+## 📖 Overview
 
 Web servers receive thousands of requests from different IP addresses.
 Among them are:
@@ -27,18 +32,42 @@ Among them are:
 
 Instead of checking requests one by one, this project models how each IP behaves over time and uses machine learning to detect abnormal behavior.
 
-##  Dashboard Demo
-<div align="center">
-  <img src="assets/dashboard.gif" width="900" alt="Anomaly Detection Walkthrough">
-  <p><i>Real-time analysis showing log uploads, anomaly scoring, and threat identification.</i></p>
-</div>
+---
+
+## 📊 Application Demo
+
+### Landing Page
+<img src="assets/web-log-dashboard-landing-page.jpeg" width="800">
+
+### Log Upload Interface
+<img src="assets/web-log-dashboard-upload-page.jpeg" width="800">
+
+### Traffic Analysis Dashboard
+<img src="assets/web-log-dashboard-analysis-dashboard.jpeg" width="800">
+
+### Anomaly Report Download
+<img src="assets/web-log-dashboard-report-download.jpeg" width="800">
 
 ---
 
-##  Workflow 
+## 🔍 Key Features
+
+✦ Upload web server log files for automated analysis  
+
+✦ Identify suspicious and anomalous IP behavior  
+
+✦ Interactive dashboard for exploring traffic patterns  
+
+✦ Visual insights into user activity and anomalies  
+
+✦ Download anomaly detection results and reports  
+
+---
+
+## ⚙️ Workflow 
 Raw Logs → Cleaning → Feature Engineering (per IP) → Isolation Forest → Visual Analysis
 
-##  Log Parsing & Cleaning
+###  Log Parsing & Cleaning
 
 Raw logs were converted into structured data with fields such as:
 
@@ -55,7 +84,7 @@ Raw logs were converted into structured data with fields such as:
 ✦ is_bot
 
 
-##  Feature Engineering
+###  Feature Engineering
 
 We transform the dataset from:
 
@@ -74,34 +103,27 @@ For every IP, we compute:
 | URL structure features | API/static/query behavior |
 
 
-##  Anomaly Detection — Isolation Forest
+###  Anomaly Detection — Isolation Forest
 Isolation Forest detects rare and unusual patterns without labels.
 
 ✦ Negative score → Anomalous IP
 
-✦ Positive score → Normal IP
+✦ Positive score → Normal IP  
 
-## 🛠️ Technologies Used
+---
 
-✦ Python
-
-✦ Pandas
-
-✦ Scikit-learn
-
-✦ Matplotlib
-
-✦ Google Colab
-
-✦ Streamlit
 
 ## 📁 Project Structure
 
 ```
 Web-Log-Traffic-Analysis-and-Anomaly-Detection/
 │
-├── assets/                  
-│   └── dashboard.gif         # Demo video of the application
+├── assets/
+|   ├── dashboard.gif         # Demo video of the application
+│   ├── web-log-dashboard-landing-page.jpeg
+│   ├── web-log-dashboard-upload-page.jpeg
+│   ├── web-log-dashboard-analysis-dashboard.jpeg
+│   └── web-log-dashboard-report-download.jpeg
 │
 ├── data/                     
 │   ├── cleaned_logs.csv     
@@ -129,17 +151,15 @@ Web-Log-Traffic-Analysis-and-Anomaly-Detection/
 ├── requirements.txt          
 └── abstract.pdf
 ```
+---
+## 🔮 Future Improvements
 
-##  What This Project Demonstrates
+✦ Real-time log monitoring support  
 
-Log analysis
+✦ Integration with backend APIs  
 
-Feature engineering from raw data
+✦ Support for larger datasets and scalable processing  
 
-Unsupervised anomaly detection
+✦ Advanced anomaly detection models  
 
-Behavioral analytics
-
-Data visualization for interpretation
-
-Interactive security intelligence dashboards
+✦ User authentication and access control  
